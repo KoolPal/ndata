@@ -1,16 +1,12 @@
 {
-  "name": "puppeteer-scraper",
+  "name": "puppeteer-nodriver-stealth",
   "version": "1.0.0",
-  "description": "A scraper using puppeteer-extra with stealth plugin to scrape shipment tracking data.",
-  "main": "index.js",
+  "description": "A scraper using Puppeteer with NODRIVER and custom stealth measures to bypass Cloudflare detection",
   "scripts": {
     "scrape": "node index.js"
   },
-  "author": "Your Name",
-  "license": "MIT",
   "dependencies": {
-    "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-stealth": "^2.11.1",
-    "puppeteer": "^19.8.5"
+    "puppeteer": "24.2.1",
+    "nodriver": "^1.0.0"
   }
 }
