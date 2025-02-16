@@ -1,0 +1,16 @@
+{
+  "name": "puppeteer-scraper",
+  "version": "1.0.0",
+  "description": "A scraper using puppeteer-extra with stealth plugin to scrape shipment tracking data.",
+  "main": "index.js",
+  "scripts": {
+    "scrape": "node index.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "puppeteer": "^19.8.5"
+  }
+}
