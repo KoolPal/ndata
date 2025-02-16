@@ -30,13 +30,12 @@ puppeteer.use(StealthPlugin());
       return match ? match[1] : null;
     }
     
-    // Extract details using provided regex patterns
-    const courierName = extractContent(content, /Courier Name\\s*:<\\/td>\\s*<td>(.*?)<\\/td>/);
-    // Note: The Status extraction removes HTML tags if present.
-    const status = extractContent(content, /Status:\\s*<\\/b>\\s*<span[^>]*>(.*?)<\\/span>/)?.replace(/<[^>]*>/g, '');
-    const destination = extractContent(content, /Destination:\\s*<\\/b>\\s*<span[^>]*>(.*?)<\\/span>/);
+    // Extract details using provided regex patterns with proper escapes
+    const courierName = extractContent(content, /Courier Name\s*:<\/td>\s*<td>(.*?)<\/td>/);
+    const status = extractContent(content, /Status:\s*<\/b>\s*<span[^>]*>(.*?)<\/span>/)?.replace(/<[^>]*>/g, '');
+    const destination = extractContent(content, /Destination:\s*<\/b>\s*<span[^>]*>(.*?)<\/span>/);
     
-    // Print out the scraped data to the console (GitHub Actions logs output these statements)
+    // Print out the scraped data to the console (GitHub Actions logs will show these statements)
     console.log("Scraped Data:");
     console.log(" Courier Name:", courierName);
     console.log(" Status:", status);
