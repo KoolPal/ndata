@@ -1,0 +1,28 @@
+name: Puppeteer Scraper
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Puppeteer Scraper
+        run: npm run scrape
+
+      - name: Output Scraper Logs
+        run: echo "Scraper has completed. Check above logs for details."
