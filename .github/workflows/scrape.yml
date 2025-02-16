@@ -1,9 +1,6 @@
-name: Puppeteer Scraper
+name: Puppeteer NODRIVER Stealth Scraper
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -21,8 +18,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Puppeteer Scraper
+      - name: Run Scrape Script
         run: npm run scrape
 
-      - name: Output Scraper Logs
-        run: echo "Scraper has completed. Check above logs for details."
+      - name: Output Completion Message
+        run: echo "Scraper execution completed. Check above logs for details."
